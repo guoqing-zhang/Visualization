@@ -52,6 +52,7 @@ sns.barplot(x = "sex",y = "survived",hue="class",data=titanic,ax=ax2)
 ax2.move_legend(new_loc="upper left", bbox_to_anchor=(1.05,1.0))
 ax2.set_title("ax2")
 
+# ax3
 
 
 ax12345.savefig()
