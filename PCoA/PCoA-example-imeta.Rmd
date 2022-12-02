@@ -1,0 +1,56 @@
+---
+title: "PCoA-R-practice"
+output: html_document
+date: "2022-12-02"
+---
+reference: https://github.com/iMetaScience/iMetaPlot
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = T, echo=T, comment="#>", message=F, warning=F,
+	fig.align="center", fig.width=5, fig.height=3, dpi=150)
+```
+
+
+### 载入R包
+1. 安装并载入R包
+```{r}
+if (!require("ggplot2"))
+  install.packages('ggplot2') 
+if (!require("vegan"))
+  install.packages('vegan') 
+if (!require("ape"))
+  install.packages('ape')
+if (!require("BiocManager"))
+  install.packages('BiocManager')
+if (!require("phyloseq"))
+  BiocManager::install('phyloseq')
+# 加载包
+library(ggplot2)
+library(vegan)
+library(ape)
+library(phyloseq)
+```
+
+### 读取或生成数据
+
+生成otu和otu进化树示例数据
+```{r}
+set.seed(42)
+# 随机生成1000个otu之间的进化树
+tree <- rtree(1000, rooted = T, tip.label = paste("s",1:1000,sep=""))
+# 随机生成OTU表，10个样本各1000个OTU
+otu <- matrix(sample(0:10,10000,replace = T), nrow = 10)
+
+# write.table(out,file = "otu.txt", quote="F", row.names=T, col.names=T)
+# out <- read.table("otu.txt")
+
+# 每个OTU命名，和进化树节点名称一致
+colnames(otu) <- tree$tip.label
+```
+
+
+
+
+
+
