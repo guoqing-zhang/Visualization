@@ -1,4 +1,6 @@
 # Visualization
-Hi, here is the **Visual code** being tested and completed.
+Hi! Here is the test and implementation of **Visual code**.
 
-Practice and Archive
+Practice and Archive and Notes.
+
+
